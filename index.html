@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="pt-BR" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apresentação Profissional - Psicologia</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .font-sans {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in-up {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+    
+    .delay-100 {
+      animation-delay: 0.1s;
+      opacity: 0;
+    }
+    
+    .delay-200 {
+      animation-delay: 0.2s;
+      opacity: 0;
+    }
+    
+    .delay-300 {
+      animation-delay: 0.3s;
+      opacity: 0;
+    }
+    
+    .delay-400 {
+      animation-delay: 0.4s;
+      opacity: 0;
+    }
+    
+    .divider {
+      width: 60px;
+      height: 2px;
+      margin: 0 auto;
+    }
+    
+    .service-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-left: 3px solid transparent;
+    }
+    
+    .service-card:hover {
+      transform: translateX(8px);
+    }
+    
+    .line-decoration {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .line-decoration::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+    }
+    
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full w-full overflow-auto font-sans">
+  <div id="app-container" class="w-full min-h-full"><!-- Navigation Menu -->
+   <nav id="main-nav" class="w-full px-6 py-4 fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+     <div class="flex items-center">
+      <div id="logo-container" class="flex items-center">
+       <svg id="logo-icon" class="w-10 h-10 mr-3" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" /> <path d="M20 10C20 10 15 15 15 20C15 25 17.5 27.5 20 27.5C22.5 27.5 25 25 25 20C25 15 20 10 20 10Z" stroke="currentColor" stroke-width="2" fill="none" />
+       </svg><span id="logo-text" class="font-serif text-2xl font-bold"></span>
+      </div>
+     </div>
+     <div class="flex items-center gap-8"><a href="#inicio" class="nav-link text-sm font-medium uppercase tracking-wide">Início</a> <a href="#sobre" class="nav-link text-sm font-medium uppercase tracking-wide">Sobre</a> <a href="#servicos" class="nav-link text-sm font-medium uppercase tracking-wide">Serviços</a> <a href="#contato" class="nav-link text-sm font-medium uppercase tracking-wide">Contato</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section id="inicio" class="w-full px-6 py-24 md:py-32 relative overflow-hidden" style="margin-top: 70px;">
+    <div class="absolute inset-0 opacity-10" id="hero-pattern">
+     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs>
+       <pattern id="grid" width="60" height="60" patternunits="userSpaceOnUse">
+        <circle cx="30" cy="30" r="2" fill="currentColor" />
+       </pattern>
+      </defs> <rect width="100%" height="100%" fill="url(#grid)" />
+     </svg>
+    </div>
+    <div class="max-w-6xl mx-auto relative z-10">
+     <div class="grid md:grid-cols-2 gap-12 items-center"><!-- Coluna Esquerda - Informações -->
+      <div>
+       <div class="inline-block px-6 py-2 rounded-full mb-6 fade-in-up" id="badge-container">
+        <p id="titulo-profissional" class="text-sm tracking-widest uppercase font-semibold"></p>
+       </div>
+       <h1 id="nome-psicologo" class="font-serif text-5xl md:text-6xl font-bold mb-4 leading-tight fade-in-up delay-100"></h1>
+       <p id="crp" class="text-lg mb-6 font-medium opacity-80 fade-in-up delay-200"></p>
+       <p id="frase-impacto" class="text-xl md:text-2xl font-light leading-relaxed mb-8 fade-in-up delay-300"></p><!-- Botões de Ação -->
+       <div class="flex flex-wrap gap-4 fade-in-up delay-400"><a href="#contato" class="px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg" id="cta-button-primary"> Agendar Consulta </a> <a href="#sobre" class="px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 border-2" id="cta-button-secondary"> Saiba Mais </a>
+       </div>
+      </div><!-- Coluna Direita - Destaques Visuais -->
+      <div class="space-y-6 fade-in-up delay-400"><!-- Card 1 -->
+       <div class="flex items-start gap-4 p-6 rounded-xl shadow-lg backdrop-blur-sm" id="feature-card-1">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" id="feature-icon-1">
+         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+         </svg>
+        </div>
+        <div>
+         <h3 class="font-semibold text-lg mb-1">Atendimento Personalizado</h3>
+         <p class="text-sm opacity-75">Cada sessão é adaptada às suas necessidades únicas</p>
+        </div>
+       </div><!-- Card 2 -->
+       <div class="flex items-start gap-4 p-6 rounded-xl shadow-lg backdrop-blur-sm" id="feature-card-2">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" id="feature-icon-2">
+         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+         </svg>
+        </div>
+        <div>
+         <h3 class="font-semibold text-lg mb-1">Horários Flexíveis</h3>
+         <p class="text-sm opacity-75">Agendamento online e presencial em horários convenientes</p>
+        </div>
+       </div><!-- Card 3 -->
+       <div class="flex items-start gap-4 p-6 rounded-xl shadow-lg backdrop-blur-sm" id="feature-card-3">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" id="feature-icon-3">
+         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+         </svg>
+        </div>
+        <div>
+         <h3 class="font-semibold text-lg mb-1">Sigilo Garantido</h3>
+         <p class="text-sm opacity-75">Total confidencialidade em todos os atendimentos</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-32 opacity-20" id="hero-wave">
+     <svg viewbox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full"><path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" fill="currentColor" />
+     </svg>
+    </div>
+   </section><!-- Sobre Section -->
+   <section id="sobre" class="w-full px-6 py-20">
+    <div class="max-w-6xl mx-auto">
+     <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div>
+       <h2 id="sobre-titulo" class="font-serif text-4xl md:text-5xl font-bold mb-6 line-decoration"></h2>
+       <p id="sobre-texto" class="text-lg leading-relaxed font-light"></p>
+      </div>
+      <div id="sobre-visual" class="h-96 rounded-lg shadow-2xl overflow-hidden"><img src="https://i.imgur.com/ccTrVpc.jpeg" alt="Foto profissional" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+      </div>
+     </div>
+    </div>
+   </section><!-- Serviços Section -->
+   <section id="servicos" class="w-full px-6 py-20">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16">
+      <h2 id="servicos-titulo" class="font-serif text-4xl md:text-5xl font-bold mb-4"></h2>
+      <div class="divider" id="servicos-divider"></div>
+     </div>
+     <div class="grid md:grid-cols-2 gap-8">
+      <div class="service-card p-8 rounded-lg">
+       <h3 id="servico-1" class="font-serif text-2xl font-semibold mb-3"></h3>
+       <p id="desc-servico-1" class="font-light leading-relaxed"></p>
+      </div>
+      <div class="service-card p-8 rounded-lg">
+       <h3 id="servico-2" class="font-serif text-2xl font-semibold mb-3"></h3>
+       <p id="desc-servico-2" class="font-light leading-relaxed"></p>
+      </div>
+      <div class="service-card p-8 rounded-lg">
+       <h3 id="servico-3" class="font-serif text-2xl font-semibold mb-3"></h3>
+       <p id="desc-servico-3" class="font-light leading-relaxed"></p>
+      </div>
+      <div class="service-card p-8 rounded-lg">
+       <h3 id="servico-4" class="font-serif text-2xl font-semibold mb-3"></h3>
+       <p id="desc-servico-4" class="font-light leading-relaxed"></p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contato Section -->
+   <section id="contato" class="w-full px-6 py-20">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16">
+      <h2 id="contato-titulo" class="font-serif text-4xl md:text-5xl font-bold mb-4"></h2>
+      <div class="divider" id="contato-divider"></div>
+     </div>
+     <div class="max-w-3xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+       <div class="p-6">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" id="phone-icon-bg">
+         <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+         </svg>
+        </div>
+        <p class="text-sm uppercase tracking-wide mb-2 font-medium">Telefone</p>
+        <p id="telefone" class="text-lg"></p>
+       </div>
+       <div class="p-6">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" id="email-icon-bg">
+         <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+         </svg>
+        </div>
+        <p class="text-sm uppercase tracking-wide mb-2 font-medium">E-mail</p>
+        <p id="email" class="text-lg"></p>
+       </div>
+       <div class="p-6">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" id="location-icon-bg">
+         <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /> <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+         </svg>
+        </div>
+        <p class="text-sm uppercase tracking-wide mb-2 font-medium">Endereço</p>
+        <p id="endereco" class="text-lg"></p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer id="footer" class="w-full py-12 px-6 border-t">
+    <div class="max-w-6xl mx-auto">
+     <div class="grid md:grid-cols-3 gap-12 mb-8"><!-- Coluna 1 - Logo e Descrição -->
+      <div>
+       <div class="flex items-center mb-4">
+        <svg id="footer-logo-icon" class="w-10 h-10 mr-3" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" /> <path d="M20 10C20 10 15 15 15 20C15 25 17.5 27.5 20 27.5C22.5 27.5 25 25 25 20C25 15 20 10 20 10Z" stroke="currentColor" stroke-width="2" fill="none" />
+        </svg><span id="footer-logo-text" class="font-serif text-2xl font-bold"></span>
+       </div>
+       <p id="footer-descricao" class="text-sm leading-relaxed opacity-80">Cuidado profissional em saúde mental com acolhimento e ética.</p>
+      </div><!-- Coluna 2 - Links Rápidos -->
+      <div>
+       <h3 class="font-semibold text-lg mb-4">Links Rápidos</h3>
+       <ul class="space-y-2">
+        <li><a href="#inicio" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Início</a></li>
+        <li><a href="#sobre" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Sobre</a></li>
+        <li><a href="#servicos" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Serviços</a></li>
+        <li><a href="#contato" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Contato</a></li>
+       </ul>
+      </div><!-- Coluna 3 - Redes Sociais -->
+      <div>
+       <h3 class="font-semibold text-lg mb-4">Redes Sociais</h3>
+       <div class="flex gap-4"><a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110" id="social-instagram">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+         </svg></a> <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110" id="social-facebook">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+         </svg></a> <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110" id="social-linkedin">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+         </svg></a> <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110" id="social-whatsapp">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+         </svg></a>
+       </div>
+      </div>
+     </div><!-- Linha divisória -->
+     <div class="border-t pt-8" id="footer-divider">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+       <p class="text-sm opacity-70">© 2024 - Todos os direitos reservados</p>
+       <div class="flex gap-6 text-sm opacity-70"><a href="#" class="hover:opacity-100 transition-opacity">Política de Privacidade</a> <a href="#" class="hover:opacity-100 transition-opacity">Termos de Uso</a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      background_color: "#e8f4f8",
+      surface_color: "#f0e6f6",
+      text_color: "#1a1a1a",
+      primary_color: "#2c3e50",
+      accent_color: "#9b59b6",
+      font_family: "Inter",
+      font_size: 16,
+      logo_text: "Psicologia",
+      nome_psicologo: "Dra. Maria Silva",
+      titulo_profissional: "Psicóloga Clínica",
+      crp: "CRP 06/123456",
+      frase_impacto: "Cuidando da sua saúde mental com acolhimento e profissionalismo",
+      sobre_titulo: "Sobre",
+      sobre_texto: "Psicóloga formada pela Universidade de São Paulo, com especialização em Terapia Cognitivo-Comportamental e Mestrado em Psicologia Clínica. Atuo há mais de 10 anos ajudando pessoas a superarem desafios emocionais, desenvolverem autoconhecimento e alcançarem uma vida mais equilibrada e saudável através de uma abordagem humanizada e baseada em evidências científicas.",
+      servicos_titulo: "Áreas de Atuação",
+      servico_1: "Terapia Individual",
+      desc_servico_1: "Atendimento personalizado focado no autoconhecimento e desenvolvimento pessoal",
+      servico_2: "Terapia de Casal",
+      desc_servico_2: "Fortalecimento de vínculos, comunicação e resolução de conflitos",
+      servico_3: "Avaliação Psicológica",
+      desc_servico_3: "Diagnósticos precisos e relatórios técnicos especializados",
+      servico_4: "Psicoterapia Online",
+      desc_servico_4: "Atendimento à distância com total sigilo e qualidade",
+      contato_titulo: "Contato",
+      telefone: "(11) 99999-9999",
+      email: "contato@mariasilvapsi.com.br",
+      endereco: "Av. Paulista, 1000 - São Paulo/SP"
+    };
+
+    async function onConfigChange(config) {
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseFontStack = 'Inter, system-ui, -apple-system, sans-serif';
+      const serifFontStack = 'Playfair Display, serif';
+      const baseSize = config.font_size || defaultConfig.font_size;
+      
+      const backgroundColor = config.background_color || defaultConfig.background_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const primaryColor = config.primary_color || defaultConfig.primary_color;
+      const accentColor = config.accent_color || defaultConfig.accent_color;
+      
+      // Apply background colors
+      const appContainer = document.getElementById('app-container');
+      appContainer.style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${surfaceColor} 50%, ${backgroundColor} 100%)`;
+      appContainer.style.color = textColor;
+      
+      // Navigation
+      const mainNav = document.getElementById('main-nav');
+      mainNav.style.backgroundColor = `${backgroundColor}cc`;
+      mainNav.style.borderBottomColor = accentColor;
+      mainNav.style.color = primaryColor;
+      
+      const logoIcon = document.getElementById('logo-icon');
+      logoIcon.style.color = accentColor;
+      
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.style.color = primaryColor;
+      });
+      
+      const navLinkStyle = document.createElement('style');
+      navLinkStyle.textContent = `.nav-link::after { background-color: ${accentColor}; }`;
+      document.head.appendChild(navLinkStyle);
+      
+      // Hero Section
+      const heroSection = document.getElementById('inicio');
+      heroSection.style.background = `linear-gradient(135deg, ${accentColor}15 0%, ${primaryColor}20 100%)`;
+      heroSection.style.color = primaryColor;
+      
+      const badgeContainer = document.getElementById('badge-container');
+      badgeContainer.style.backgroundColor = accentColor;
+      badgeContainer.style.color = '#ffffff';
+      
+      const heroPattern = document.getElementById('hero-pattern');
+      heroPattern.style.color = primaryColor;
+      
+      const heroWave = document.getElementById('hero-wave');
+      heroWave.style.color = accentColor;
+      
+      // Sobre Section
+      const sobreSection = document.getElementById('sobre');
+      sobreSection.style.backgroundColor = backgroundColor;
+      sobreSection.style.color = textColor;
+      
+      const sobreVisual = document.getElementById('sobre-visual');
+      sobreVisual.style.backgroundColor = surfaceColor;
+      sobreVisual.style.color = accentColor;
+      
+      // Servicos Section
+      const servicosSection = document.getElementById('servicos');
+      servicosSection.style.backgroundColor = surfaceColor;
+      servicosSection.style.color = textColor;
+      
+      // Contato Section
+      const contatoSection = document.getElementById('contato');
+      contatoSection.style.backgroundColor = backgroundColor;
+      contatoSection.style.color = textColor;
+      
+      // Footer
+      const footer = document.getElementById('footer');
+      footer.style.backgroundColor = backgroundColor;
+      footer.style.color = textColor;
+      footer.style.borderTopColor = surfaceColor;
+      
+      const footerLogoIcon = document.getElementById('footer-logo-icon');
+      footerLogoIcon.style.color = accentColor;
+      
+      const footerDivider = document.getElementById('footer-divider');
+      footerDivider.style.borderTopColor = `${textColor}20`;
+      
+      // Social icons
+      const socialInstagram = document.getElementById('social-instagram');
+      socialInstagram.style.backgroundColor = `${accentColor}20`;
+      socialInstagram.style.color = accentColor;
+      
+      const socialFacebook = document.getElementById('social-facebook');
+      socialFacebook.style.backgroundColor = `${accentColor}20`;
+      socialFacebook.style.color = accentColor;
+      
+      const socialLinkedin = document.getElementById('social-linkedin');
+      socialLinkedin.style.backgroundColor = `${accentColor}20`;
+      socialLinkedin.style.color = accentColor;
+      
+      const socialWhatsapp = document.getElementById('social-whatsapp');
+      socialWhatsapp.style.backgroundColor = `${accentColor}20`;
+      socialWhatsapp.style.color = accentColor;
+      
+      // Apply divider colors
+      document.getElementById('servicos-divider').style.backgroundColor = accentColor;
+      document.getElementById('contato-divider').style.backgroundColor = accentColor;
+      
+      // CTA Buttons
+      const ctaPrimary = document.getElementById('cta-button-primary');
+      ctaPrimary.style.backgroundColor = accentColor;
+      ctaPrimary.style.color = '#ffffff';
+      
+      const ctaSecondary = document.getElementById('cta-button-secondary');
+      ctaSecondary.style.backgroundColor = 'transparent';
+      ctaSecondary.style.color = primaryColor;
+      ctaSecondary.style.borderColor = primaryColor;
+      
+      // Feature cards
+      const featureCard1 = document.getElementById('feature-card-1');
+      featureCard1.style.backgroundColor = `${surfaceColor}99`;
+      featureCard1.style.color = textColor;
+      
+      const featureCard2 = document.getElementById('feature-card-2');
+      featureCard2.style.backgroundColor = `${surfaceColor}99`;
+      featureCard2.style.color = textColor;
+      
+      const featureCard3 = document.getElementById('feature-card-3');
+      featureCard3.style.backgroundColor = `${surfaceColor}99`;
+      featureCard3.style.color = textColor;
+      
+      // Feature icons
+      document.getElementById('feature-icon-1').style.backgroundColor = `${accentColor}20`;
+      document.getElementById('feature-icon-1').style.color = accentColor;
+      
+      document.getElementById('feature-icon-2').style.backgroundColor = `${accentColor}20`;
+      document.getElementById('feature-icon-2').style.color = accentColor;
+      
+      document.getElementById('feature-icon-3').style.backgroundColor = `${accentColor}20`;
+      document.getElementById('feature-icon-3').style.color = accentColor;
+      
+      // Line decoration
+      const lineDecorationStyle = document.createElement('style');
+      lineDecorationStyle.textContent = `.line-decoration::after { background-color: ${accentColor}; }`;
+      document.head.appendChild(lineDecorationStyle);
+      
+      // Service cards
+      const serviceCards = document.querySelectorAll('.service-card');
+      serviceCards.forEach(card => {
+        card.style.backgroundColor = backgroundColor;
+        card.style.borderLeftColor = accentColor;
+      });
+      
+      // Icon backgrounds
+      document.getElementById('phone-icon-bg').style.backgroundColor = surfaceColor;
+      document.getElementById('phone-icon-bg').style.color = accentColor;
+      document.getElementById('email-icon-bg').style.backgroundColor = surfaceColor;
+      document.getElementById('email-icon-bg').style.color = accentColor;
+      document.getElementById('location-icon-bg').style.backgroundColor = surfaceColor;
+      document.getElementById('location-icon-bg').style.color = accentColor;
+      
+      // Apply fonts
+      document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+      
+      const serifElements = document.querySelectorAll('.font-serif');
+      serifElements.forEach(el => {
+        el.style.fontFamily = `${customFont}, ${serifFontStack}`;
+      });
+      
+      // Apply font sizes
+      document.getElementById('logo-text').style.fontSize = `${baseSize * 1.5}px`;
+      navLinks.forEach(link => {
+        link.style.fontSize = `${baseSize * 0.875}px`;
+      });
+      document.getElementById('titulo-profissional').style.fontSize = `${baseSize * 0.875}px`;
+      document.getElementById('nome-psicologo').style.fontSize = `${baseSize * 3.5}px`;
+      document.getElementById('crp').style.fontSize = `${baseSize * 1.125}px`;
+      document.getElementById('frase-impacto').style.fontSize = `${baseSize * 1.375}px`;
+      
+      // CTA buttons
+      const ctaButtons = document.querySelectorAll('#cta-button-primary, #cta-button-secondary');
+      ctaButtons.forEach(btn => {
+        btn.style.fontSize = `${baseSize}px`;
+      });
+      
+      // Feature cards
+      const featureCards = document.querySelectorAll('#feature-card-1 h3, #feature-card-2 h3, #feature-card-3 h3');
+      featureCards.forEach(title => {
+        title.style.fontSize = `${baseSize * 1.125}px`;
+      });
+      
+      const featureDescs = document.querySelectorAll('#feature-card-1 p, #feature-card-2 p, #feature-card-3 p');
+      featureDescs.forEach(desc => {
+        desc.style.fontSize = `${baseSize * 0.875}px`;
+      });
+      document.getElementById('sobre-titulo').style.fontSize = `${baseSize * 2.5}px`;
+      document.getElementById('sobre-texto').style.fontSize = `${baseSize * 1.125}px`;
+      document.getElementById('servicos-titulo').style.fontSize = `${baseSize * 2.5}px`;
+      document.getElementById('contato-titulo').style.fontSize = `${baseSize * 2.5}px`;
+      
+      const servicoTitles = document.querySelectorAll('#servicos h3');
+      servicoTitles.forEach(title => {
+        title.style.fontSize = `${baseSize * 1.5}px`;
+      });
+      
+      const servicoDescs = document.querySelectorAll('#servicos p');
+      servicoDescs.forEach(desc => {
+        desc.style.fontSize = `${baseSize}px`;
+      });
+      
+      const contatoLabels = contatoSection.querySelectorAll('.uppercase');
+      contatoLabels.forEach(label => {
+        label.style.fontSize = `${baseSize * 0.875}px`;
+      });
+      
+      const contatoTexts = contatoSection.querySelectorAll('p:not(.uppercase)');
+      contatoTexts.forEach(text => {
+        text.style.fontSize = `${baseSize * 1.125}px`;
+      });
+      
+      footer.querySelector('p').style.fontSize = `${baseSize * 0.875}px`;
+      
+      // Footer specific
+      document.getElementById('footer-logo-text').textContent = config.logo_text || defaultConfig.logo_text;
+      document.getElementById('footer-logo-text').style.fontSize = `${baseSize * 1.5}px`;
+      
+      const footerLinks = footer.querySelectorAll('a');
+      footerLinks.forEach(link => {
+        link.style.fontSize = `${baseSize * 0.875}px`;
+      });
+      
+      const footerHeadings = footer.querySelectorAll('h3');
+      footerHeadings.forEach(heading => {
+        heading.style.fontSize = `${baseSize * 1.125}px`;
+      });
+      
+      document.getElementById('footer-descricao').style.fontSize = `${baseSize * 0.875}px`;
+      
+      // Update text content
+      document.getElementById('logo-text').textContent = config.logo_text || defaultConfig.logo_text;
+      document.getElementById('nome-psicologo').textContent = config.nome_psicologo || defaultConfig.nome_psicologo;
+      document.getElementById('titulo-profissional').textContent = config.titulo_profissional || defaultConfig.titulo_profissional;
+      document.getElementById('crp').textContent = config.crp || defaultConfig.crp;
+      document.getElementById('frase-impacto').textContent = config.frase_impacto || defaultConfig.frase_impacto;
+      document.getElementById('sobre-titulo').textContent = config.sobre_titulo || defaultConfig.sobre_titulo;
+      document.getElementById('sobre-texto').textContent = config.sobre_texto || defaultConfig.sobre_texto;
+      document.getElementById('servicos-titulo').textContent = config.servicos_titulo || defaultConfig.servicos_titulo;
+      document.getElementById('servico-1').textContent = config.servico_1 || defaultConfig.servico_1;
+      document.getElementById('desc-servico-1').textContent = config.desc_servico_1 || defaultConfig.desc_servico_1;
+      document.getElementById('servico-2').textContent = config.servico_2 || defaultConfig.servico_2;
+      document.getElementById('desc-servico-2').textContent = config.desc_servico_2 || defaultConfig.desc_servico_2;
+      document.getElementById('servico-3').textContent = config.servico_3 || defaultConfig.servico_3;
+      document.getElementById('desc-servico-3').textContent = config.desc_servico_3 || defaultConfig.desc_servico_3;
+      document.getElementById('servico-4').textContent = config.servico_4 || defaultConfig.servico_4;
+      document.getElementById('desc-servico-4').textContent = config.desc_servico_4 || defaultConfig.desc_servico_4;
+      document.getElementById('contato-titulo').textContent = config.contato_titulo || defaultConfig.contato_titulo;
+      document.getElementById('telefone').textContent = config.telefone || defaultConfig.telefone;
+      document.getElementById('email').textContent = config.email || defaultConfig.email;
+      document.getElementById('endereco').textContent = config.endereco || defaultConfig.endereco;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.surface_color || defaultConfig.surface_color,
+            set: (value) => {
+              config.surface_color = value;
+              window.elementSdk.setConfig({ surface_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => config.primary_color || defaultConfig.primary_color,
+            set: (value) => {
+              config.primary_color = value;
+              window.elementSdk.setConfig({ primary_color: value });
+            }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              config.accent_color = value;
+              window.elementSdk.setConfig({ accent_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["logo_text", config.logo_text || defaultConfig.logo_text],
+        ["nome_psicologo", config.nome_psicologo || defaultConfig.nome_psicologo],
+        ["titulo_profissional", config.titulo_profissional || defaultConfig.titulo_profissional],
+        ["crp", config.crp || defaultConfig.crp],
+        ["frase_impacto", config.frase_impacto || defaultConfig.frase_impacto],
+        ["sobre_titulo", config.sobre_titulo || defaultConfig.sobre_titulo],
+        ["sobre_texto", config.sobre_texto || defaultConfig.sobre_texto],
+        ["servicos_titulo", config.servicos_titulo || defaultConfig.servicos_titulo],
+        ["servico_1", config.servico_1 || defaultConfig.servico_1],
+        ["desc_servico_1", config.desc_servico_1 || defaultConfig.desc_servico_1],
+        ["servico_2", config.servico_2 || defaultConfig.servico_2],
+        ["desc_servico_2", config.desc_servico_2 || defaultConfig.desc_servico_2],
+        ["servico_3", config.servico_3 || defaultConfig.servico_3],
+        ["desc_servico_3", config.desc_servico_3 || defaultConfig.desc_servico_3],
+        ["servico_4", config.servico_4 || defaultConfig.servico_4],
+        ["desc_servico_4", config.desc_servico_4 || defaultConfig.desc_servico_4],
+        ["contato_titulo", config.contato_titulo || defaultConfig.contato_titulo],
+        ["telefone", config.telefone || defaultConfig.telefone],
+        ["email", config.email || defaultConfig.email],
+        ["endereco", config.endereco || defaultConfig.endereco]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b8b33c0136ec6c1',t:'MTc2NzUzNDU5Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
